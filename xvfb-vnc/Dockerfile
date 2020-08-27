@@ -1,5 +1,10 @@
 # Install and start Xvfb and a vnc client to run GUI programs
 # WARNING: Xvfb doesn't use the GPU!!!
+# the VNC client runs on port 5900 by default and uses no password
+# How to use:
+# - publish the VNC port to the host with `docker run -p 5900:5900`
+# - forward the VNC port to whatever computer the vnc client runs on, e.g. with `ssh -N -T -L 5900:localhost:5900 user@remotehost &`
+# - start the vnc client: `vncviewer localhost:5900`
 
 FROM ubuntu
 
