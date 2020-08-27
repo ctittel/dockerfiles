@@ -6,6 +6,7 @@
 # Setup: the user that does `docker run` must run `ssh-keygen` and generate a pair of SSH keys with default names and without password
 # 
 # How to run: `docker run -v ~/.ssh:/ssh ...`
+# when connecting with the SSH client do `ssh -o StrictHostKeyChecking=no` so it doesn't require user input
 
 FROM ubuntu
 RUN apt update && \
@@ -16,5 +17,5 @@ RUN apt update && \
 COPY ssh-client ssh-server /usr/bin
 RUN chmod a+x /usr/bin/ssh-client && \
     chmod a+x /usr/bin/ssh-server
-    
+
 CMD ssh-client && ssh-server
