@@ -1,0 +1,3 @@
+mkdir ~/.ssh
+cp /ssh/id_rsa.pub ~/.ssh/authorized_keys
+/usr/sbin/sshd # run SSH server

@@ -1,0 +1,7 @@
+# Security requirement of SSH: only the user must be able read/write the private SSH key
+
+echo "Installing SSH keys"
+mkdir ~/.ssh
+cp /ssh/id_rsa /ssh/id_rsa.pub ~/.ssh
+chmod a-rw ~/.ssh/id_rsa ~/.ssh/id_rsa.pub
+chmod u+rw ~/.ssh/id_rsa ~/.ssh/id_rsa.pub      
